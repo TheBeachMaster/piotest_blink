@@ -5,6 +5,10 @@
 
 Calculator calc;
 
+
+void loop(void);
+void setup(void);
+
 void test_add(void)
 {
     TEST_ASSERT_EQUAL(15,calc.add(7,8));
@@ -30,7 +34,7 @@ void test_subtraction(void)
     TEST_ASSERT_EQUAL(10,calc.subtract(100,90));
 }
 
-int main(int argc, char **argv)
+void process()
 {
     UNITY_BEGIN();
     RUN_TEST(test_add);
@@ -38,9 +42,30 @@ int main(int argc, char **argv)
     RUN_TEST(test_square);
     RUN_TEST(test_division);
     RUN_TEST(test_subtraction);
-    UNITY_END();
+    UNITY_END();    
+}
 
+#ifdef ARDUINO
+
+#include <Arduino.h>
+void setup() {
+    process();
+}
+
+void loop() {
+    digitalWrite(13, HIGH);
+    delay(100);
+    digitalWrite(13, LOW);
+    delay(500);
+}
+
+#else
+
+int main(int argc, char **argv) {
+    process();
     return 0;
 }
+
+#endif
 
 #endif // !UNIT_TEST
