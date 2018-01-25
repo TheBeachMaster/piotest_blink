@@ -3,7 +3,6 @@
 #include "calc.h"
 
 Calculator calc;
-
 void blink_once(unsigned int delay_ms)
 {
     digitalWrite(LED_BUILTIN,HIGH);
@@ -12,18 +11,14 @@ void blink_once(unsigned int delay_ms)
     delay(delay_ms);
 }
 
-void setup(void)
-{
-    Serial.begin(9600);
+int main(int argc, char **argv) {
+      Serial.begin(9600);
     while (!Serial)
     {
-        ;;
+        ;
     }
 
-}
-
-void loop()
-{
+  while (1) {
     Serial.println("Adding things");
     Serial.println(calc.add(58,88));
     blink_once(200);
@@ -39,7 +34,7 @@ void loop()
     Serial.println("Multiplying things");
     Serial.println(calc.multiply(40,8));
     blink_once(200);
+  }
+  return 0;
 }
-
-#endif // !UNIT_TEST
-
+#endif
