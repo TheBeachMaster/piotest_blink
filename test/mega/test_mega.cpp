@@ -30,8 +30,7 @@ void test_subtraction(void)
 {
     TEST_ASSERT_EQUAL(10,calc.subtract(100,90));
 }
-
-void setup(void)
+int main(int argc, char **argv)
 {
     UNITY_BEGIN();
     RUN_TEST(test_add);
@@ -40,14 +39,13 @@ void setup(void)
     RUN_TEST(test_division);
     RUN_TEST(test_subtraction);
     UNITY_END();
-}
-
-void loop(void)
-{
+    while (1)
+    {
     digitalWrite(13, HIGH);
     delay(100);
     digitalWrite(13, LOW);
     delay(500);
+    }
 }
 
 #endif // !UNIT_TEST
