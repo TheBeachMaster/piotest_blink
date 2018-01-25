@@ -1,6 +1,5 @@
 #ifndef UNIT_TEST
-
-#include "Arduino.h"
+#include <Arduino.h>
 #include "calc.h"
 
 Calculator calc;
