@@ -6,14 +6,6 @@
 
 Calculator calc;
 
-// void setUp(void) {
-// // set stuff up here
-// }
-
-// void tearDown(void) {
-// // clean stuff up here
-// }
-
 void test_add(void) {
     TEST_ASSERT_EQUAL(32, calc.add(25, 7));
 }
