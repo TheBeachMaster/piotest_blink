@@ -1,41 +1,37 @@
-#ifndef UNIT_TEST
+#ifndef UNIT_TEST // disable program main loop while unit testing in progress
 
 #include <Arduino.h>
-#include "calc.h"
+#include "calculator.h"
 
 Calculator calc;
 
 void blink_once(unsigned int delay_ms)
 {
-    digitalWrite(LED_BUILTIN,HIGH);
+    digitalWrite(LED_BUILTIN, HIGH);
     delay(delay_ms);
-    digitalWrite(LED_BUILTIN,LOW);
+    digitalWrite(LED_BUILTIN, LOW);
     delay(delay_ms);
 }
+
 
 void setup() {
-      Serial.begin(9600);
-    while (!Serial)
-    {
-        ;
-    }
+    Serial.begin(9600);
+    Serial.println("Program started!");
+}
 
-}
-  void loop () {
-    Serial.println("Adding things");
-    Serial.println(calc.add(58,88));
+void loop() {
+    Serial.print("Addition: ");
+    Serial.println(calc.add(25, 17));
     blink_once(200);
-    Serial.println("Subtracting things");
-    Serial.println(calc.subtract(66,41));
+    Serial.print("Subtraction: ");
+    Serial.println(calc.sub(10, 3));
     blink_once(200);
-    Serial.println("Squaring things");
-    Serial.println(calc.square(5));
+    Serial.print("Multiplication: ");
+    Serial.println(calc.mul(3, 3));
     blink_once(200);
-    Serial.println("Dividing things");
-    Serial.println(calc.divide(45,9));
-    blink_once(200);
-    Serial.println("Multiplying things");
-    Serial.println(calc.multiply(40,8));
+    Serial.print("Division: ");
+    Serial.println(calc.div(100, 3));
     blink_once(200);
 }
+
 #endif
