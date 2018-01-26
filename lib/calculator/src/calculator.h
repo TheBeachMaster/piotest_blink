@@ -10,6 +10,7 @@ public:
     int sub (int a, int b);
     int mul (int a, int b);
     int div (int a, int b);
+    int square (int a);
 };
 
 #endif
