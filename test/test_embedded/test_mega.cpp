@@ -6,9 +6,6 @@
 
 Calculator calc;
 
-void loop(void);
-void setup(void);
-
 void test_add(void)
 {
     TEST_ASSERT_EQUAL(15,calc.add(7,8));

@@ -5,8 +5,7 @@
 
 Calculator calc;
 
-void loop(void);
-void setup(void);
+
 
 void test_add(void)
 {

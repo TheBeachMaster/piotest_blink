@@ -1,11 +1,10 @@
 #ifndef UNIT_TEST
+
 #include <Arduino.h>
 #include "calc.h"
 
 Calculator calc;
 
-void loop(void);
-void setup(void);
 void blink_once(unsigned int delay_ms)
 {
     digitalWrite(LED_BUILTIN,HIGH);
